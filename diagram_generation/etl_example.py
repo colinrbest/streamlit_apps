@@ -21,9 +21,9 @@ with Diagram("Splunk_ETL", show=False):
         gitlab = Gitlab("Repository")
 
     with Cluster("Data Generation"):
-        [IotCore("core1"),
-         IotCore("core2"),
-         IotCore("core3")] >> splunk
+        [IotCore("Video Server"),
+         IotCore("Field Device"),
+         IotCore("Network Device")] >> splunk
 
     with Cluster("Running in On Prem Linux Server"):
         with Cluster("VM"):

@@ -1,7 +1,5 @@
 from diagrams import Cluster, Diagram
 from diagrams.gcp.analytics import BigQuery, Dataflow, PubSub, Datalab
-from diagrams.gcp.compute import AppEngine, Functions
-from diagrams.gcp.database import BigTable
 from diagrams.gcp.iot import IotCore
 from diagrams.gcp.storage import GCS
 from diagrams.onprem.analytics import Tableau

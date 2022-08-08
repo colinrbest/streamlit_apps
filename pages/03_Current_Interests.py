@@ -1,6 +1,12 @@
 import streamlit as st
+from common_functions import txt
 from PIL import Image
 
+with open("style.css") as f:
+    st.markdown('<style>{}</style>'.format(f.read()), unsafe_allow_html=True)
+
+# photos used
+splunk_etl = Image.open('diagram_generation/splunk_etl.png')
 st.title("Data Engineering")
 st.sidebar.markdown("Data Engineering")
 

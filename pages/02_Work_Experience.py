@@ -1,8 +1,15 @@
 import streamlit as st
 from common_functions import txt
+from PIL import Image
+from common_functions import txt, txt2, txt3, img_to_bytes
 
-st.markdown("Work Experience")
-st.sidebar.markdown("Work Experience")
+with open("style.css") as f:
+    st.markdown('<style>{}</style>'.format(f.read()), unsafe_allow_html=True)
+
+# photos used
+splunk_etl = Image.open('diagram_generation/splunk_etl.png')
+
+st.sidebar.markdown("Accenture, AT&T, RiskLens")
 
 
 #####################
@@ -28,4 +35,4 @@ with tab1:
 
 with tab2:
     st.header("Example of one ETL process with log records from Splunk")
-    st.image(splunk_etl, width=700)
+    st.image(splunk_etl, width=1000)

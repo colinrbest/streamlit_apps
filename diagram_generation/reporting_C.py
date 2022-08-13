@@ -13,6 +13,7 @@ from diagrams.onprem.vcs import Gitlab
 from diagrams.onprem.analytics import Hadoop
 from diagrams.onprem.client import Client
 from diagrams.onprem.database import Oracle
+from diagrams.onprem.database import Postgresql
 
 
 with Diagram("Reporting", show=False):
@@ -26,6 +27,8 @@ with Diagram("Reporting", show=False):
     with Cluster("Running in On Prem Linux Server"):
         with Cluster("VM"):
             python = Python(
-                "Scheduled Chron\n rolling 1 min window")
+                "Scheduled chron\n daily report")
+        with Cluster("PostGresql DB"):
+            postg = Postgresql()
 
-    oracle >> python >> powerbi
+    oracle >> python >> postg >> powerbi

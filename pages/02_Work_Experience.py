@@ -8,6 +8,7 @@ with open("style.css") as f:
 
 # photos used
 splunk_etl = Image.open('diagram_generation/splunk_etl.png')
+reports = Image.open('diagram_generation/reporting.png')
 
 st.sidebar.markdown("Accenture, AT&T, RiskLens")
 
@@ -24,8 +25,8 @@ st.markdown('''
 - Worked across several roles as a Data Engineer, Data Scientist, and Team Lead on an Operational Intelligence Platform
 - Click the tabs below to see different tools and architectures used for this work
 ''')
-tab1, tab2, tab3, tab4 = st.tabs(["Tools Used", "ETL Architecture",
-                                  "Data Science Architecture", "Reporting Architecture"])
+tab1, tab2, tab3 = st.tabs(
+    ["Tools Used", "ETL Architecture", "Reporting Architecture"])
 
 with tab1:
     st.markdown('''
@@ -36,3 +37,7 @@ with tab1:
 with tab2:
     st.header("Example of one ETL process with log records from Splunk")
     st.image(splunk_etl, width=1000)
+
+with tab3:
+    st.header("Example Daily Report that would run")
+    st.image(reports, width=1000)
